@@ -1,0 +1,59 @@
+.grid-container-single {
+  display: -ms-grid;
+  display: grid;
+  background-color: #f1f1f1;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  height: 100%;
+}
+
+.grid-container-date, .grid-container-date-log {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 50%;
+      grid-template-columns: 25% 25% 50%;
+}
+
+.grid-container-date-log {
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.grid-item-date {
+  min-width: 200px;
+  margin: 30px;
+}
+
+.grid-item-single {
+  margin: 5px;
+  background-color: white;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  border-style: solid;
+  min-width: 450px;
+  overflow: hidden;
+}
+
+.dateRangeBtn {
+  color: white;
+  background-color: #0088FE;
+  font-weight: bold !important;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  height: 40px;
+  border: solid;
+  display: block;
+  clear: both;
+  min-width: 150px;
+  margin: 30px;
+}
+
+.dateRangeLog {
+  min-height: 150px;
+  width: 100%;
+  margin: 10px;
+}
+/*# sourceMappingURL=daterangeselector.css.map */

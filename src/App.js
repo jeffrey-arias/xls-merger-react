@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/app.css';
+import { Link, HashRouter as Router, Switch, Route } from 'react-router-dom';
+import 'react-pro-sidebar/dist/css/styles.css';
+
+import Dashboard from './components/dashboard.component';
+import Home from './components/home.component';
+import SideBar from './components/sidebar.component'
+import DateRangeSeletor from './components/daterangeselector.component';
+
+
+const handleCollapsedChange = () => {
+      
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Router basename={process.env.PUBLIC_URL}> 
+    <SideBar />
+    <Switch>
+      <Route path ="/" exact component={Home}/>
+       <Route path ="/dashboard" component={Dashboard}/>
+       <Route path ="/admin" component={DateRangeSeletor}/>
+       </Switch>
+      
+    </Router>
   );
 }
+
+
 
 export default App;

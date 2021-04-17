@@ -1,0 +1,91 @@
+.grid-container-filter {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: none;
+}
+
+.grid-container-filter-single {
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: none;
+}
+ .grid-item-filter {
+    margin: 0;
+    background-color:none;
+    margin: 5px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color:rgba(0, 0, 0, 0.2);
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .filterLabel {
+      background-color: #0088FE;
+      color: white;
+      padding: 5px 0 5px 10px;
+  }
+
+  .flex-container {
+      margin: 10px 5px 10px 5px;
+      display: flex;
+      justify-content: center;
+  }
+
+  .totalBatchTxn {
+      font-weight: bolder;
+      font-size: 40px;
+      width: 100%;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 40px;  
+}
+
+.filterCheckBox {
+    min-width: 100px;
+    text-align: left;
+    text-overflow: ellipsis;
+    padding: 2px 0 2px 40px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.button, .buttonExport {
+    color: white;
+    background-color: lightgreen;
+    font-weight: bold !important;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+    height: 40px;
+    border: solid;
+    display: block;
+    clear: both;
+}
+
+.buttonExport {
+    background-color: #FF6663;
+}
+.filterBtn {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterLog {
+    width: 92%;
+    height: 35%;
+    margin: 10px;
+}
+
+.dateBox {
+    border: 1px solid lightgray;
+    max-width: 500px;
+    min-width: 50px;
+    width: 100%;
+    font-size: 12px;
+}

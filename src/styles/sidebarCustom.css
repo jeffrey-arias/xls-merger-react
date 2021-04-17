@@ -1,0 +1,9 @@
+.pro-sidebar > .pro-sidebar-inner {
+  background-color: #5c5c5c;
+}
+
+nav > ul {
+  display: list-item;
+  list-style-type: none;
+}
+/*# sourceMappingURL=sidebarCustom.css.map */

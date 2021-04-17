@@ -1,0 +1,11 @@
+// Your variable overrides
+$sidebar-bg-color: rgb(92, 92, 92);
+
+.pro-sidebar > .pro-sidebar-inner{
+    background-color: $sidebar-bg-color;
+}
+
+nav > ul {
+    display: list-item;
+    list-style-type: none;
+}

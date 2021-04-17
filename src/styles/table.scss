@@ -1,0 +1,36 @@
+.grid-item {
+    align-items: center;
+}
+
+.tableHeader {
+    color: white;
+    background-color:#0088FE;
+}
+
+.tableTotalLabel{
+    display: inline;
+    text-align: left;
+    font-weight: bolder;
+    vertical-align: middle;
+}
+
+.tableTotalValue{
+    display: inline;
+    text-align: right;
+    font-weight: bolder;
+    vertical-align: middle;
+
+}
+
+.grid-container-table {
+    display: grid;
+    grid-template-columns: 66.7% 33.3%;
+    background-color: none;
+}
+
+ .grid-item-table {
+    margin: 0;
+    background-color:none;
+    padding-left: 15px;
+    height: 30px;
+  }
