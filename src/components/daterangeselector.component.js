@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import $ from 'jquery';
+import React, {useEffect} from 'react'; 
 
 import '../styles/daterangeselector.css';
 import {dateNow} from './helper.component'
@@ -10,9 +9,9 @@ export default function DateRangeSeletor () {
 });
 
     return (
-        <div style={{height:"100%", minHeight:"600px"}}>
-          <div className="grid-container-single">
-            <div className="grid-item-single">
+        <div style={{height:"98vh", minHeight:"600px", width:"100%"}}>
+          <div className="grid-container-single" style={{height:"100%"}}>
+            <div className="grid-item-single" style={{height:"100%"}}>
                 <div className="filterLabel">Select Date Range</div>   
                 <form className="grid-container-date">
                         <text className="grid-item-date">Report Date:</text>

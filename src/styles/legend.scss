@@ -1,12 +1,18 @@
 .legendList {
-    min-width: 320px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:90%;
 }
 
 #legendLabel > li {
     text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
 }

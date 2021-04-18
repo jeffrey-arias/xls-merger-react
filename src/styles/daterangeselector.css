@@ -5,6 +5,8 @@
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   height: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .grid-container-date, .grid-container-date-log {

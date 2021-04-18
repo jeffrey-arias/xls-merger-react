@@ -1,4 +1,3 @@
-import { data } from 'jquery';
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, LabelList, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 

@@ -8,7 +8,7 @@ import Legend from './legend.component'
 
 export default function Dashboard() {
   return (
-    <div style={{display: "inline", position:"relative"}}>
+    <div style={{display: "inline", position:"relative,", width:"100%"}}>
       <div className="grid-container-triple">
         <div className="grid-item-triple"> 
           <Piechart />

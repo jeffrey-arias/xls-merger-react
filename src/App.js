@@ -14,14 +14,16 @@ const handleCollapsedChange = () => {
 
 function App() {
   return (
-  <Router basename={process.env.PUBLIC_URL}> 
+  <Router basename={process.env.PUBLIC_URL}>
+    <div style={{display:"flex", flexDirection: "row"}}>
     <SideBar />
     <Switch>
       <Route path ="/" exact component={Home}/>
        <Route path ="/dashboard" component={Dashboard}/>
        <Route path ="/admin" component={DateRangeSeletor}/>
        </Switch>
-      
+       </div>
+
     </Router>
   );
 }

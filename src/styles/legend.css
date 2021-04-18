@@ -1,13 +1,28 @@
 .legendList {
-  min-width: 320px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
 }
 
 #legendLabel > li {
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
 }
 /*# sourceMappingURL=legend.css.map */

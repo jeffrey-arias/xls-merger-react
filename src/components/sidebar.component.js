@@ -2,26 +2,24 @@ import React, {useState} from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarFooter } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 import { FcHome, FcComboChart, FcPlanner, FcPrivacy} from 'react-icons/fc';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import 'react-pro-sidebar/dist/css/styles.css';
 import '../styles/sidebarCustom.css';
 
-export default function SideBar(handleCollapsedChange) {
+export default function SideBar() {
 
     const [collapse=true, setCollapsed] = useState(0);
+    
     return (
             <ProSidebar 
                 style={{display: "inline", position:"relative", float: "left", 
-                height: "100%"}} 
+                height: "100vh"}} 
                 collapsed={collapse}
                 width="200px"
                 collapsedWidth="50px"
                 onMouseEnter={() => setCollapsed(false)}
                 onMouseLeave={() => setCollapsed(true)}>
-                <div style={{alignItems:"right"}}>
-               </div>
+
                 <Menu>
                     <MenuItem icon={<FcHome/>}>Home</MenuItem>
                     <Link to="/" />

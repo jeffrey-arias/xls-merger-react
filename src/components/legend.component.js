@@ -15,9 +15,9 @@ export default function Legend () {
     )
 
     return (
-        <div >
+        <div style={{height:"100%", display:"block"}}>
             <div className="filterLabel">Legend</div>
-            <div style={{paddingTop: "30px"}} className="legendList">
+            <div className="legendList">
             <ul id="legendLabel" >
                 <li>CASH_DEPOSIT_NOT_REPORTED</li>
                 <li>CASH_DEPOSIT_REPORTED</li>
