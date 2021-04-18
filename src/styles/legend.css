@@ -22,7 +22,6 @@
 #legendLabel > li {
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
   padding: 0;
 }
 /*# sourceMappingURL=legend.css.map */
