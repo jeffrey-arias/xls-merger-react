@@ -26,9 +26,9 @@
   @media screen and (max-width: 1200px) {
     .grid-container, .grid-container-triple {
         display: flex;
+        flex-basis: 100%;
         flex-flow: column wrap;
         flex: 1 1 1;
-        
     }
       
   }

@@ -5,6 +5,9 @@ $sidebar-bg-color: rgb(92, 92, 92);
     background-color: $sidebar-bg-color;
 }
 
+.pro-icon-wrapper {
+    display: inline !important;
+}
 nav > ul {
     display: list-item;
     list-style-type: none;
