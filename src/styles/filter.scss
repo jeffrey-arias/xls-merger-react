@@ -68,6 +68,16 @@
 .buttonExport {
     background-color: #FF6663;
 }
+
+.buttonExport:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.buttonExport:hover{
+    background-color: #ff1410
+}
+
 .filterBtn {
     width: 100%;
     align-items: center;

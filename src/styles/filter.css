@@ -79,6 +79,17 @@
   background-color: #FF6663;
 }
 
+.buttonExport:active {
+  -webkit-box-shadow: 0 2px #666;
+          box-shadow: 0 2px #666;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.buttonExport:hover {
+  background-color: #ff1410;
+}
+
 .filterBtn {
   width: 100%;
   -webkit-box-align: center;

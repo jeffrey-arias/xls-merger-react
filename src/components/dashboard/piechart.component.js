@@ -1,21 +1,10 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 
-import '../styles/charts.css'
+import {COLORS} from '../helper/helper.component'
+import '../../styles/charts.css'
 
-const data = [
-  { name: 'NIP_INFLOW_NOT_REPORTED', value: 400 },
-  { name: 'NIP_INFLOW_REPORTED', value: 300 },
-  { name: 'CASH_DEPOSIT_NOT_REPORTED', value: 250 },
-  { name: 'CASH_DEPOSIT_REPORTED', value: 200 },
-  { name: 'LOAN_NOT_REPORTED', value: 50 },
-  { name: 'LOAN_REPORTED', value: 60 },
-  { name: 'CASH_WITHDRAWAL_NOT_REPORTED', value: 70},
-  { name: 'CASH_WITHDRAWAL_REPORTED', value: 80 }
-];
-
-const COLORS = ['#0088FE', '#9EC1CF','#9EE09E','#00C49F', '#B19CD9', '#FFBB28','#FF8042','#FF6663'];
-
+{/* These are pie chart specific UI calculations */}
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
@@ -27,16 +16,16 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     </text>
   );
 };
-export default class Piechart extends PureComponent {
 
-  render() {
+export default function Piechart (props) {
+
     return (
       <ResponsiveContainer width="99%" height="100%">
         <PieChart>
           <Tooltip/>
           {/*<Legend layout="vetical" verticalAlign="middle" align="right" iconType="circle" iconSize={5}/>*/}
           <Pie
-            data={data}
+            data={props.data}
             cx="50%"
             cy="50%"
             label={renderCustomizedLabel}
@@ -44,12 +33,11 @@ export default class Piechart extends PureComponent {
             outerRadius={120}
             fill="#8884d8"
             dataKey="value">
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            {props.data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={props.colors[index % COLORS.length]} />
             ))}
           </Pie>
         </PieChart>
       </ResponsiveContainer>
     );
   }
-}
