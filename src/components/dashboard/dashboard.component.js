@@ -7,9 +7,6 @@ import FilterBox from './filter.component';
 import Legend from './legend.component'
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux'
-
-import {setDashBoardDetails} from '../datastore/actions';
-
 class Dashboard extends React.PureComponent {
 
   constructor (props) {
@@ -99,10 +96,4 @@ const mapStateToProps = ( state ) => {
   }   
 }
 
-const mapDispatchToProps = ( dispatch ) => {
-  console.log("Fetching dispatch from datastore: ");
-  return {
-      fetchDashboardData: () => dispatch(setDashBoardDetails())
-  }   
-}
 export default connect( mapStateToProps)( Dashboard )

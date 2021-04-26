@@ -4,6 +4,12 @@ function getCurrentDate () {
     return curr.toLocaleDateString("en-GB").substr(0,10);
 }
 
+export function getFormattedDate (date) {
+    var curr = new Date(date);
+    curr.setDate(curr.getDate());   
+    return curr.toLocaleDateString("en-GB").substr(0,10);
+}
+
 function getCurrentISODate () {
     var curr = new Date();
     curr.setDate(curr.getDate());   

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import '../../styles/filter.css'
 
-import {dateNow} from '../helper/helper.component';
+import {dateNow, getFormattedDate} from '../helper/helper.component';
 import {connect} from 'react-redux';
 
 
@@ -178,8 +178,8 @@ const mapStateToProps = (state) => {
     return {
         data : state.data,
         totalValue : state.totalValue,
-        dateFrom : state.dateFrom,
-        dateTo : state.dateTo,
+        dateFrom : getFormattedDate(state.dateFrom),
+        dateTo : getFormattedDate(state.dateTo),
         colors : state.colors
     }   
 }
