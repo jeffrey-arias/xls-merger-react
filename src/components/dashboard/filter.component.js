@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import '../../styles/filter.css'
 
-import {dateNow, getFormattedDate} from '../helper/helper.component';
+import {dateNow, getFormattedDate, exportToPDF} from '../helper/helper.component';
 import {connect} from 'react-redux';
-
-
+import Dashboard from '../dashboard/dashboard.component';
+import BargraphClickable from '../dashboard/bargraph.component'
 class FilterBox extends React.PureComponent {
 
     constructor (props) {
@@ -86,6 +86,11 @@ class FilterBox extends React.PureComponent {
         }
     };
     
+    exportAsPDF () {
+        console.log('Exporting page as PDF...');
+        exportToPDF();
+    }
+
     render () {
 
         return (
@@ -161,7 +166,7 @@ class FilterBox extends React.PureComponent {
                         <div className="filterLabel">Other Actions:</div>
                         <div className="filterBtn">
                             {/*<input type="button" value="Submit" className="button"/>*/}
-                            <input type="button" value="Export & Send" className="buttonExport"/>
+                            <input type="button" value="Export & Send" className="buttonExport" onClick={this.exportAsPDF}/>
                         </div>
                         <div>&nbsp;&nbsp;Logs:</div>
                         <textarea className="filterLog" defaultValue="No Log Information..."></textarea>
@@ -184,3 +189,4 @@ const mapStateToProps = (state) => {
     }   
 }
 export default connect(mapStateToProps)(FilterBox);
+

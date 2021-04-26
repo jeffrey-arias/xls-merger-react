@@ -28,7 +28,7 @@ class Dashboard extends React.PureComponent {
   render () {
     console.log(this.props);
     return (
-      <div style={{display: "inline", position:"relative,", width:"100%"}}>
+      <div id="dashboard" style={{display: "inline", position:"relative,", width:"100%"}}>
         <div className="grid-container-triple">
           <div className="grid-item-triple"> 
             <Piechart data={this.props.data} totalValue={this.props.totalValue}

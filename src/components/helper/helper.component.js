@@ -1,3 +1,6 @@
+import html2canvas from 'html2canvas';
+import { jsPDF } from "jspdf";
+
 function getCurrentDate () {
     var curr = new Date();
     curr.setDate(curr.getDate());   
@@ -33,3 +36,20 @@ export const COLOR_MAP = new Map([
     ["CASH_WITHDRAWAL_NOT_REPORTED","#FF8042"],
     ["CASH_WITHDRAWAL_REPORTED","#FF6663"]
 ]);
+
+export function exportToPDF() {
+
+    const input = document.getElementById('app');
+    const timeStamp = new Date().getTime();
+    html2canvas(input)
+    .then((canvas) => {
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF({  
+        orientation: "landscape",
+        unit: "in",
+        format: [14, 8.5]
+      });
+    pdf.addImage(imgData, 'PNG', 0, 0);
+    pdf.save(timeStamp+"_dashboard_download.pdf");  
+  });
+}

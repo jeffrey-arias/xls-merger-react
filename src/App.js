@@ -19,6 +19,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 
 function App() {
   return (
+    <div id="app">
     <Provider store={store}>
 
   <Router basename={process.env.PUBLIC_URL}>
@@ -33,6 +34,7 @@ function App() {
 
     </Router>
     </Provider>
+    </div>
   );
 }
 

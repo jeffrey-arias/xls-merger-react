@@ -15,7 +15,7 @@ export default function Legend () {
     )
 
     return (
-        <div style={{height:"100%", display:"block"}}>
+        <div style={{height:"100%", display:"block"}} id="legend">
             <div className="filterLabel">Legend</div>
             <div className="legendList">
             <ul id="legendLabel" >
