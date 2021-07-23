@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import '../../styles/filter.css'
 
-import {dateNow, getFormattedDate, exportToPDF} from '../helper/helper.component';
+import {dateNow, getFormattedDate, exportToPDF, buildDispatchName} from '../helper/helper.component';
 import {connect} from 'react-redux';
 import Dashboard from '../dashboard/dashboard.component';
 import BargraphClickable from '../dashboard/bargraph.component'
@@ -22,68 +22,76 @@ class FilterBox extends React.PureComponent {
         };
     }
     
+    // toggleCheckBox = (e) => {
+    //     this.setState(state => ({ [e.target.dataset.name]: e.target.checked}));
+    //     switch (e.target.dataset.name) {
+    //         case  "CASH_DEPOSIT_NOT_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_NOT_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_NOT_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         case  "CASH_DEPOSIT_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         case  "CASH_WITHDRAWAL_NOT_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_NOT_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_NOT_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         case  "CASH_WITHDRAWAL_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         case  "LOAN_NOT_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_LOAN_NOT_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_LOAN_NOT_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         case  "LOAN_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_LOAN_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_LOAN_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         case  "NIP_INFLOW_NOT_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_NIP_INFLOW_NOT_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_NIP_INFLOW_NOT_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         case  "NIP_INFLOW_REPORTED" :
+    //             if (e.target.checked) {
+    //                 this.props.dispatch({type: "TOGGLE_NIP_INFLOW_REPORTED_TRUE"});
+    //             } else {
+    //                 this.props.dispatch({type: "TOGGLE_NIP_INFLOW_REPORTED_FALSE"});
+    //             }
+    //             return;
+    //         default : return;
+
+    //     }
+    // };
     toggleCheckBox = (e) => {
         this.setState(state => ({ [e.target.dataset.name]: e.target.checked}));
-        switch (e.target.dataset.name) {
-            case  "CASH_DEPOSIT_NOT_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_NOT_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_NOT_REPORTED_FALSE"});
-                }
-                return;
-            case  "CASH_DEPOSIT_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_CASH_DEPOSIT_REPORTED_FALSE"});
-                }
-                return;
-            case  "CASH_WITHDRAWAL_NOT_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_NOT_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_NOT_REPORTED_FALSE"});
-                }
-                return;
-            case  "CASH_WITHDRAWAL_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_CASH_WITHDRAWAL_REPORTED_FALSE"});
-                }
-                return;
-            case  "LOAN_NOT_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_LOAN_NOT_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_LOAN_NOT_REPORTED_FALSE"});
-                }
-                return;
-            case  "LOAN_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_LOAN_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_LOAN_REPORTED_FALSE"});
-                }
-                return;
-            case  "NIP_INFLOW_NOT_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_NIP_INFLOW_NOT_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_NIP_INFLOW_NOT_REPORTED_FALSE"});
-                }
-                return;
-            case  "NIP_INFLOW_REPORTED" :
-                if (e.target.checked) {
-                    this.props.dispatch({type: "TOGGLE_NIP_INFLOW_REPORTED_TRUE"});
-                } else {
-                    this.props.dispatch({type: "TOGGLE_NIP_INFLOW_REPORTED_FALSE"});
-                }
-                return;
-            default : return;
-
-        }
+            if (e.target.checked) {
+                this.props.dispatch({type: buildDispatchName(e.target.dataset.name, "TRUE") });
+            } else {
+                this.props.dispatch({type: buildDispatchName(e.target.dataset.name, "FALSE") });
+            }
     };
     
     exportAsPDF () {

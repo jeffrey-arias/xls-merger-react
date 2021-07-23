@@ -37,6 +37,10 @@ export const COLOR_MAP = new Map([
     ["CASH_WITHDRAWAL_REPORTED","#FF6663"]
 ]);
 
+export function buildDispatchName (name, check) {
+    return "TOGGLE_"+name+"_"+check;
+}
+
 export function exportToPDF() {
 
     const input = document.getElementById('app');
